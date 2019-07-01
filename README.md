@@ -1,24 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repository is a test of a Rails CI/CD pipeline using a database driven app.
 
-Things you may want to cover:
+- Docker is used to deploy a local development app and database server
+- Travis CI is set up to test the staging and master branches
+- If CI passes the staging branch is deployed to a staging instance on Heroku
+- On successful merge of a pull request into the master branch it is deployed into production  on Heroku
 
-* Ruby version
+Instructions
+---
 
-* System dependencies
+To deploy docker containers locally:
 
-* Configuration
+docker-compose up
 
-* Database creation
+Site should then be accessible on localhost:3000
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Push any updates to the staging branch to automatically perform CI/CD as above. Raise a pull request and merge to deploy to production.
