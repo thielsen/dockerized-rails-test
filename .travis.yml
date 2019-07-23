@@ -4,10 +4,11 @@ rvm:
   - 2.5.1
 services:
   - postgresql
+before_install:
+  - gem install bundler -v '1.17.3'
 before_script:
   - cp config/database.travis.yml config/database.yml
   - psql -c 'create database project_test;' -U postgres
-  - gem install bundler -v '1.17.3'
 script:
   - bin/rake db:migrate RAILS_ENV=test
   - bin/rake
