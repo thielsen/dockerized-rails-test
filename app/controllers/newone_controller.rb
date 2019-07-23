@@ -1,4 +1,4 @@
-class HomeController < ApplicationController
+class NewoneController < ApplicationController
 
   before_action :authenticate_user!, only: [:profile]
 
